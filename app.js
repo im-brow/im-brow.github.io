@@ -16,5 +16,9 @@ document.querySelectorAll('[data-filter]').forEach(b=>b.addEventListener('click'
 document.querySelector('.close-viewer').addEventListener('click',closeImage);viewer.addEventListener('cancel',e=>{e.preventDefault();closeImage()});viewer.addEventListener('click',e=>{if(e.target===viewer){const r=viewer.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)closeImage()}});
 document.querySelectorAll('.review-open').forEach(b=>b.addEventListener('click',()=>openImage(b.dataset.src,'임브로우 제공 실제 고객 후기 원문')));
 const reduced=matchMedia('(prefers-reduced-motion: reduce)');let observer;
-function motion(){observer?.disconnect();document.documentElement.classList.toggle('js-motion',!reduced.matches);if(!reduced.matches){observer=new IntersectionObserver(entries=>entries.forEach(e=>e.target.classList.toggle('visible',e.isIntersecting)),{threshold:.08});document.querySelectorAll('.reveal').forEach(e=>observer.observe(e))}document.querySelectorAll('video').forEach(v=>{v.muted=true;if(reduced.matches){v.pause();v.removeAttribute('autoplay')}else{v.setAttribute('autoplay','');v.play().catch(()=>{})}})}motion();reduced.addEventListener('change',motion);
+function motion(){observer?.disconnect();document.documentElement.classList.toggle('js-motion',!reduced.matches);if(!reduced.matches){observer=new IntersectionObserver(entries=>entries.forEach(e=>e.target.classList.toggle('visible',e.isIntersecting)),{threshold:.08});document.querySelectorAll('.reveal').forEach(e=>observer.observe(e))}}motion();reduced.addEventListener('change',motion);
 window.addEventListener('pageshow',e=>{if(!e.persisted)window.scrollTo({top:0,left:0,behavior:'instant'})});
+
+// Keep decorative motion reduced while the requested studio films play in view.
+const filmObserver=new IntersectionObserver(entries=>entries.forEach(({target:v,isIntersecting})=>{v.muted=true;v.defaultMuted=true;if(isIntersecting){v.setAttribute('autoplay','');v.play().catch(()=>{})}else{v.pause()}}),{threshold:.1});
+document.querySelectorAll('video').forEach(v=>filmObserver.observe(v));
