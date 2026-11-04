@@ -1,6 +1,6 @@
 const cases=[
- ['women','work-w1','여자눈썹 · 전후 비교 01','위 Before / 아래 After'],
- ['women','work-w2','여자눈썹 · 전후 비교 02','원본의 위·아래 전후 사진'],
+ ['women','work-new1-20261103','여자눈썹 · 3단 비교','제공 원본의 위·가운데·아래 순서 그대로'],
+ ['women','work-new2-20261103','여자눈썹 · 2단 비교','제공 원본의 위·아래 순서 그대로'],
  ['men','work-m1','남자눈썹 · 전후 비교 01','왼쪽 Before / 오른쪽 After'],
  ['men','work-m2','남자눈썹 · 전후 비교 02','위 Before / 아래 After'],
  ['women','work-w3','여자눈썹 · 전후 비교 03','왼쪽 Before / 오른쪽 After'],
