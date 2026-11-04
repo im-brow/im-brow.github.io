@@ -12,3 +12,7 @@
 .recent-reviews{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:40px;padding-top:30px;border-top:1px solid var(--line)}
 .recent-reviews blockquote{font-size:16px}.recent-reviews cite{margin-top:12px}
 @media(max-width:640px){.hero-media .hero-photo{object-position:50% 28%}.process-films{gap:10px}.process-films figure video{height:265px!important}.process-films figcaption h3{font-size:12px}.recent-reviews{grid-template-columns:1fr;gap:25px;margin-top:28px;padding-top:25px}.recent-reviews blockquote{font-size:15px}}
+
+/* Frame the consultation and design lower, with the director in focus. */
+.method-media video{object-position:50% 70%}
+.process-films figure:first-child video{object-position:50% 56%}
