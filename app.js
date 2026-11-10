@@ -99,8 +99,8 @@ function bounceCue(el,amplitude,delay=0){
 }
 function playAttentionCues(){
  document.querySelectorAll('.fixed-cta a').forEach((el,i)=>bounceCue(el,reduced.matches?9:13,i*180));
- document.querySelectorAll('.event,.price-panel .price-number,a.photo-consult').forEach(el=>bounceCue(el,reduced.matches?15:22,100));
- document.querySelectorAll('.price-panel .booking-label').forEach(el=>bounceCue(el,reduced.matches?6:9,240));
+ document.querySelectorAll('.hero-event-price,.price-panel .price-number,a.photo-consult').forEach(el=>bounceCue(el,reduced.matches?15:22,100));
+ document.querySelectorAll('.hero-copy .booking-label,.price-panel .booking-label').forEach(el=>bounceCue(el,reduced.matches?6:9,240));
 }
 setTimeout(playAttentionCues,1400);setInterval(playAttentionCues,4400);
 
