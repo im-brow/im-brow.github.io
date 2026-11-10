@@ -148,3 +148,6 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
  .hero-copy>.intro{font-size:9px;-webkit-text-size-adjust:100%;text-size-adjust:100%}
  .fixed-cta{bottom:calc(12px + env(safe-area-inset-bottom,0px))}
 }
+
+.brand-spark{display:block;width:23px;height:23px;flex:0 0 23px;color:#fff}
+@media(max-width:640px){.brand-spark{width:14px;height:14px;flex-basis:14px}}

@@ -34,17 +34,17 @@ function selectMotion(el){
  return 'title';
 }
 function framesFor(type){
- const soft=reduced.matches,d=soft?14:32;
+ const soft=reduced.matches,d=soft?18:42;
  const end={opacity:1,transform:'none',filter:'blur(0px)',clipPath:'inset(0% 0% 0% 0%)'};
  const from={opacity:0,transform:`translateY(${d}px)`};
- if(type==='brand')Object.assign(from,{transform:`translateY(${soft?3:18}px)`,filter:`blur(${soft?1:4}px)`});
+ if(type==='brand')Object.assign(from,{transform:`translateY(${soft?5:24}px)`,filter:`blur(${soft?1:4}px)`});
  if(type==='hero'||type==='stagger')from.transform='none';
  if(type==='from-right')from.transform=`translateX(${d}px)`;
  if(type==='from-left')from.transform=`translateX(-${d}px)`;
- if(type==='curtain')Object.assign(from,{transform:`translateX(-${d}px)`,clipPath:soft?'inset(0 10% 0 0)':'inset(0 28% 0 0)'});
- if(type==='focus')Object.assign(from,{transform:soft?'none':'scale(1.025)',filter:`blur(${soft?3:8}px)`});
+ if(type==='curtain')Object.assign(from,{transform:`translateX(-${d}px)`,clipPath:soft?'inset(0 10% 0 0)':'inset(0 35% 0 0)'});
+ if(type==='focus')Object.assign(from,{transform:soft?'none':'scale(1.04)',filter:`blur(${soft?3:8}px)`});
  if(type==='soft')Object.assign(from,{transform:'none',filter:`blur(${soft?3:8}px)`});
- if(type==='image')Object.assign(from,{transform:soft?'none':'scale(1.025)',clipPath:soft?'inset(2% 0)':'inset(8% 0)'});
+ if(type==='image')Object.assign(from,{transform:soft?'none':'scale(1.04)',clipPath:soft?'inset(2% 0)':'inset(8% 0)'});
  if(type==='gallery')from.transform=`translateY(${soft?12:25}px)`;
  if(type==='price')from.transform=soft?'translateY(5px)':'translateY(22px) scale(.985)';
  if(type==='review')from.transform=`translateX(-${soft?5:22}px)`;
@@ -53,17 +53,17 @@ function framesFor(type){
 }
 function reveal(el){
  if(el.dataset.motionShown==='yes')return;el.dataset.motionShown='yes';el.style.opacity='1';
- const type=el.dataset.motion,anims=[];const duration=reduced.matches?650:(type==='curtain'||type==='focus'?1050:800);
+ const type=el.dataset.motion,anims=[];const duration=reduced.matches?750:(type==='curtain'||type==='focus'?1200:950);
  const delay=0;
  anims.push(el.animate(framesFor(type),{duration,delay,easing:'cubic-bezier(.16,.7,.24,1)',fill:'both'}));
  let items=[];
  if(type==='hero'){
   items=[...el.children].filter(item=>item.tagName!=='H1');
-  el.querySelectorAll('.hero-title-line').forEach((line,i)=>anims.push(line.animate([{opacity:0,transform:`translateX(${(i===0?-1:1)*(reduced.matches?22:40)}px)`},{opacity:1,transform:'none'}],{duration:950,delay:80+i*150,easing:'cubic-bezier(.16,.75,.2,1)',fill:'both'})));
+  el.querySelectorAll('.hero-title-line').forEach((line,i)=>anims.push(line.animate([{opacity:0,transform:`translateX(${(i===0?-1:1)*(reduced.matches?26:50)}px)`},{opacity:1,transform:'none'}],{duration:1100,delay:80+i*180,easing:'cubic-bezier(.16,.75,.2,1)',fill:'both'})));
  }
  if(type==='stagger')items=[...el.querySelectorAll(':scope > article,:scope > details,:scope > dl > div')];
  if(type==='review')items=[...el.querySelectorAll('blockquote')];
- items.forEach((item,i)=>{const side=(i%2===0?-1:1)*(reduced.matches?12:24);const from=(type==='hero'||type==='stagger'||type==='review')?`translateX(${side}px)`:`translateY(${reduced.matches?8:18}px)`;anims.push(item.animate([{opacity:0,transform:from},{opacity:1,transform:'none'}],{duration:reduced.matches?650:850,delay:Math.min(i*(reduced.matches?90:120),500),easing:'cubic-bezier(.2,.7,.2,1)',fill:'both'}))});
+ items.forEach((item,i)=>{const side=(i%2===0?-1:1)*(reduced.matches?16:32);const from=(type==='hero'||type==='stagger'||type==='review')?`translateX(${side}px)`:`translateY(${reduced.matches?8:18}px)`;anims.push(item.animate([{opacity:0,transform:from},{opacity:1,transform:'none'}],{duration:reduced.matches?750:1000,delay:Math.min(i*(reduced.matches?110:150),500),easing:'cubic-bezier(.2,.7,.2,1)',fill:'both'}))});
  activeMotion.set(el,anims);
 }
 function observeMotion(root=document){
