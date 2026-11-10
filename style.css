@@ -157,3 +157,5 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 .hero-event-price,.booking-label{display:inline-block}.hero-copy .event{animation:none}
 
 .case-caption{justify-content:flex-end;padding:10px 0}.case-arrow{width:19px;height:19px;display:block;color:#111}
+
+@media(max-width:640px){.gallery{grid-template-columns:minmax(0,1fr);gap:24px}.gallery .case-media{height:auto;aspect-ratio:auto}.gallery .case-media img{height:auto;max-height:none;object-fit:contain}.gallery .case{min-width:0}}
