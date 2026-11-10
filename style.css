@@ -110,3 +110,5 @@ a[href^="tel:"]{display:inline-block;text-decoration:underline;text-decoration-c
 @media(max-width:640px){.hero-copy>.button{width:100%;max-width:180px;min-height:44px;padding:10px 12px;font-size:11px;line-height:1.4}}
 
 @media(max-width:640px){.method-media{order:0}.method-copy{order:1}}
+
+@media(max-width:640px){.hero-copy>.intro br{display:initial}}
