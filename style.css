@@ -53,3 +53,19 @@ a[href^="tel:"]{display:inline-block;text-decoration:underline;text-decoration-c
  .hero-copy>.button{grid-column:1 / -1;grid-row:5;width:100%}
  .hero-copy>.micro{grid-column:1 / -1;grid-row:6;margin:12px 0 10px}
 }
+
+/* Actual review images paired with their own excerpts. */
+.review-heading{margin-bottom:36px}.review-heading>p:last-child{margin-top:20px;font-size:14px}
+.photo-review-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.photo-review-card{background:#fff;border:1px solid #e6e5e2;border-radius:16px;overflow:hidden;min-width:0}
+.review-photo{display:block;width:100%;height:240px;border:0;padding:22px;background:#111;position:relative;text-align:left}
+.review-photo img{width:100%;height:100%;object-fit:contain}
+.review-photo>span{position:absolute;right:14px;bottom:12px;font-size:10px;color:#fff;background:#111c;padding:3px 8px;border-radius:20px}
+.review-card-body{padding:27px 24px 21px}.review-kind{font:10px/1.5 Arial,sans-serif;letter-spacing:.08em;color:#777}
+.review-card-body h3{font-size:21px;margin:12px 0 18px}
+.review-card-body blockquote{margin:0;font-size:15px;line-height:1.9;letter-spacing:-.025em;min-height:144px;color:#333}
+.review-card-footer{display:flex;align-items:center;justify-content:space-between;gap:10px;border-top:1px solid #e8e8e5;margin-top:24px;padding-top:16px}
+.review-card-footer>span{font-size:10px;color:#888}.review-card-footer .text-link{font-size:11px;margin:0;white-space:nowrap}
+.review-source-note{font-size:11px;margin-top:23px;color:#888}
+@media(max-width:900px) and (min-width:641px){.photo-review-grid{gap:12px}.review-card-body{padding:20px 16px}.review-card-footer{flex-wrap:wrap}.review-photo{height:200px;padding:14px}}
+@media(max-width:640px){.review-section .section{padding:58px 22px}.review-heading{margin-bottom:27px}.review-heading h2{font-size:31px}.review-heading>p:last-child{font-size:12px;line-height:1.8}.photo-review-grid{grid-template-columns:1fr;gap:22px}.review-photo{height:auto;aspect-ratio:1.45;padding:23px}.review-card-body{padding:24px}.review-card-body h3{font-size:21px}.review-card-body blockquote{min-height:0;font-size:14px}.review-source-note{font-size:10px;line-height:1.8}}
