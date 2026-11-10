@@ -161,3 +161,5 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 @media(max-width:640px){.gallery{grid-template-columns:minmax(0,1fr);gap:24px}.gallery .case-media{height:auto;aspect-ratio:auto}.gallery .case-media img{height:auto;max-height:none;object-fit:contain}.gallery .case{min-width:0}}
 
 .gallery .case{cursor:default}.gallery .case:hover img{transform:none}
+
+@media(max-width:640px){.hero-copy .hero-title{font-size:clamp(17px,11.5cqw,29px);line-height:1.4;letter-spacing:-.065em}.hero-copy>.eyebrow{font-size:8px;letter-spacing:.04em;margin-bottom:14px}}
