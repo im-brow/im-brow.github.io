@@ -95,10 +95,10 @@ document.querySelectorAll('video').forEach(v=>filmObserver.observe(v));
 function bounceCue(el,amplitude,delay=0){
  if(document.hidden||el.matches(':hover'))return;
  const r=el.getBoundingClientRect();if(r.bottom<=0||r.top>=innerHeight)return;
- el.animate([{transform:'translateY(0)',offset:0},{transform:`translateY(-${amplitude}px)`,offset:.26},{transform:'translateY(0)',offset:.47},{transform:`translateY(-${amplitude*.45}px)`,offset:.68},{transform:'translateY(0)',offset:1}],{duration:900,delay,easing:'ease-out'});
+ el.animate([{transform:'translateY(0)',offset:0},{transform:`translateY(-${amplitude}px)`,offset:.26},{transform:'translateY(0)',offset:.47},{transform:`translateY(-${amplitude*.55}px)`,offset:.68},{transform:'translateY(0)',offset:1}],{duration:1050,delay,easing:'ease-out'});
 }
 function playAttentionCues(){
- document.querySelectorAll('.fixed-cta a').forEach((el,i)=>bounceCue(el,reduced.matches?5:7,i*180));
- document.querySelectorAll('.event,.price-panel h3').forEach(el=>bounceCue(el,reduced.matches?6:8,100));
+ document.querySelectorAll('.fixed-cta a').forEach((el,i)=>bounceCue(el,reduced.matches?9:13,i*180));
+ document.querySelectorAll('.event,.price-panel h3').forEach(el=>bounceCue(el,reduced.matches?15:22,100));
 }
-setTimeout(playAttentionCues,1400);setInterval(playAttentionCues,5200);
+setTimeout(playAttentionCues,1400);setInterval(playAttentionCues,4400);
