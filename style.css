@@ -27,3 +27,5 @@
 nav a{position:relative}nav a::after{content:'';position:absolute;left:0;right:0;bottom:-5px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .35s ease}nav a:hover::after{transform:scaleX(1)}
 .button>span,.fixed-cta a>span{display:inline-block;transition:transform .3s ease}.button:hover>span,.fixed-cta a:hover>span{transform:translate(3px,-2px)}
 @media(max-width:640px){.hero-media .hero-film{object-position:50% 28%}}
+
+.hero-title-line{display:block}
