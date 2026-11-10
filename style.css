@@ -138,3 +138,13 @@ a[href^="tel:"]{display:inline-block;text-decoration:underline;text-decoration-c
 .review-monogram{display:flex;flex-direction:column;align-items:center;justify-content:center;font:800 25px/1 Arial,sans-serif;color:#111;letter-spacing:-.06em}.review-monogram>span{font:600 8px/1 Arial,sans-serif;letter-spacing:.12em;margin-top:7px}
 .testimonial-controls .review-auto-toggle{font-size:13px;color:#666}
 @media(max-width:640px){.testimonial-card{padding:0}.testimonial-bubble{border-radius:18px;padding:30px 25px 24px}.testimonial-profile{margin-top:29px;gap:9px;font-size:10px}.testimonial-profile>img,.review-monogram{width:64px;height:64px}.review-monogram{font-size:22px}}
+
+/* Prevent mobile WebKit text inflation inside the split hero. */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+@media(max-width:640px){
+ .hero-copy{min-width:0;container-type:inline-size}
+ .hero-copy>h1{font-size:16px;font-size:clamp(14px,9cqw,24px);max-width:100%;letter-spacing:-.065em;line-height:1.45}
+ .hero-title-line{white-space:nowrap;max-width:100%;overflow:visible}
+ .hero-copy>.intro{font-size:9px;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+ .fixed-cta{bottom:calc(12px + env(safe-area-inset-bottom,0px))}
+}
