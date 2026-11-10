@@ -45,7 +45,7 @@ function framesFor(type){
  if(type==='focus')Object.assign(from,{transform:soft?'none':'scale(1.025)',filter:`blur(${soft?3:8}px)`});
  if(type==='soft')Object.assign(from,{transform:'none',filter:`blur(${soft?3:8}px)`});
  if(type==='image')Object.assign(from,{transform:soft?'none':'scale(1.025)',clipPath:soft?'inset(2% 0)':'inset(8% 0)'});
- if(type==='gallery')from.transform=`translateY(${soft?4:22}px)`;
+ if(type==='gallery')from.transform=`translateY(${soft?12:25}px)`;
  if(type==='price')from.transform=soft?'translateY(5px)':'translateY(22px) scale(.985)';
  if(type==='review')from.transform=`translateX(-${soft?5:22}px)`;
  if(type==='title')Object.assign(from,{clipPath:soft?'inset(0 0 5% 0)':'inset(0 0 20% 0)'});
@@ -54,7 +54,7 @@ function framesFor(type){
 function reveal(el){
  if(el.dataset.motionShown==='yes')return;el.dataset.motionShown='yes';el.style.opacity='1';
  const type=el.dataset.motion,anims=[];const duration=reduced.matches?650:(type==='curtain'||type==='focus'?1050:800);
- const delay=type==='gallery'?Math.min(Number(el.dataset.motionOrder||0)%4*85,255):0;
+ const delay=0;
  anims.push(el.animate(framesFor(type),{duration,delay,easing:'cubic-bezier(.16,.7,.24,1)',fill:'both'}));
  let items=[];
  if(type==='hero'){
@@ -99,6 +99,6 @@ function bounceCue(el,amplitude,delay=0){
 }
 function playAttentionCues(){
  document.querySelectorAll('.fixed-cta a').forEach((el,i)=>bounceCue(el,reduced.matches?9:13,i*180));
- document.querySelectorAll('.event,.price-panel h3').forEach(el=>bounceCue(el,reduced.matches?15:22,100));
+ document.querySelectorAll('.event,.price-panel h3,a.photo-consult').forEach(el=>bounceCue(el,reduced.matches?15:22,100));
 }
 setTimeout(playAttentionCues,1400);setInterval(playAttentionCues,4400);
