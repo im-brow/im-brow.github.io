@@ -112,11 +112,10 @@ if(reviewTrack){
  function goReview(i){i=(i+cards.length)%cards.length;const c=cards[i],target=c.offsetLeft-reviewTrack.offsetLeft-(reviewTrack.clientWidth-c.clientWidth)/2,start=reviewTrack.scrollLeft,t0=performance.now();cancelAnimationFrame(scrollAnimation);reviewTrack.style.scrollSnapType='none';function step(now){const t=Math.min((now-t0)/(reduced.matches?700:1200),1),e=t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;reviewTrack.scrollLeft=start+(target-start)*e;if(t<1)scrollAnimation=requestAnimationFrame(step);else{reviewTrack.style.scrollSnapType='';markReview()}}scrollAnimation=requestAnimationFrame(step)}
  document.querySelector('.review-prev').addEventListener('click',()=>goReview(current-1));document.querySelector('.review-next').addEventListener('click',()=>goReview(current+1));dots.forEach((d,i)=>d.addEventListener('click',()=>goReview(i)));reviewTrack.addEventListener('scroll',markReview,{passive:true});reviewTrack.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();goReview(current+(e.key==='ArrowRight'?1:-1))}});window.addEventListener('resize',markReview);markReview();
  let autoPaused=false,interacting=false,direction=1,lastInteraction=0;
- const autoToggle=document.querySelector('.review-auto-toggle');
- autoToggle.addEventListener('click',()=>{autoPaused=!autoPaused;autoToggle.textContent=autoPaused?'▶':'Ⅱ';autoToggle.setAttribute('aria-pressed',String(autoPaused));autoToggle.setAttribute('aria-label',autoPaused?'후기 자동 넘김 재생':'후기 자동 넘김 일시정지')});
+ 
  reviewTrack.addEventListener('pointerenter',()=>interacting=true);reviewTrack.addEventListener('pointerleave',()=>interacting=false);
  document.querySelector('.testimonial-section').addEventListener('pointerdown',()=>lastInteraction=Date.now());
  reviewTrack.addEventListener('touchstart',()=>{cancelAnimationFrame(scrollAnimation);reviewTrack.style.scrollSnapType='';lastInteraction=Date.now()},{passive:true});
- setInterval(()=>{const r=reviewTrack.getBoundingClientRect();if(autoPaused||interacting||document.hidden||r.bottom<0||r.top>innerHeight||Date.now()-lastInteraction<14000||document.querySelector('.testimonial-controls :focus-visible'))return;if(current===cards.length-1)direction=-1;else if(current===0)direction=1;goReview(current+direction)},12000);
+ setInterval(()=>{const r=reviewTrack.getBoundingClientRect();if(autoPaused||interacting||document.hidden||r.bottom<0||r.top>innerHeight||Date.now()-lastInteraction<5000||document.querySelector('.testimonial-controls :focus-visible'))return;if(current===cards.length-1)direction=-1;else if(current===0)direction=1;goReview(current+direction)},3000);
  
 }
