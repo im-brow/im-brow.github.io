@@ -69,3 +69,18 @@ a[href^="tel:"]{display:inline-block;text-decoration:underline;text-decoration-c
 .review-source-note{font-size:11px;margin-top:23px;color:#888}
 @media(max-width:900px) and (min-width:641px){.photo-review-grid{gap:12px}.review-card-body{padding:20px 16px}.review-card-footer{flex-wrap:wrap}.review-photo{height:200px;padding:14px}}
 @media(max-width:640px){.review-section .section{padding:58px 22px}.review-heading{margin-bottom:27px}.review-heading h2{font-size:31px}.review-heading>p:last-child{font-size:12px;line-height:1.8}.photo-review-grid{grid-template-columns:1fr;gap:22px}.review-photo{height:auto;aspect-ratio:1.45;padding:23px}.review-card-body{padding:24px}.review-card-body h3{font-size:21px}.review-card-body blockquote{min-height:0;font-size:14px}.review-source-note{font-size:10px;line-height:1.8}}
+
+/* Compact, centered mobile opening. */
+@media(max-width:640px){
+ .hero{padding:25px 20px 20px}.hero-word{padding-top:0;margin:7px -6px 0}
+ .hero-layout{grid-template-columns:minmax(0,1fr);gap:0;margin-top:18px}
+ .hero-copy>.eyebrow{grid-column:1;grid-row:1;margin:0 0 10px;align-self:auto}
+ .hero-copy>h1{grid-column:1;grid-row:2;font-size:clamp(27px,7.4vw,39px);line-height:1.3;align-self:auto;margin:0 0 18px}
+ .hero-layout>.hero-media{grid-column:1;grid-row:3;width:100%;max-width:360px;height:auto;aspect-ratio:1.12;justify-self:center;margin:0;align-self:auto}
+ .hero-media .hero-film{position:absolute;inset:0;object-position:50% 35%}
+ .hero-copy>.intro{grid-column:1;grid-row:4;margin-top:18px;line-height:1.8}
+ .hero-copy>.event{grid-column:1;grid-row:5;margin:22px 0 18px}
+ .hero-copy>.button{grid-column:1;grid-row:6}
+ .hero-copy>.micro{grid-column:1;grid-row:7;margin:10px 0 0}
+ .scroll-cue{margin-top:15px}
+}
