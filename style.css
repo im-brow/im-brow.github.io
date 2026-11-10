@@ -34,3 +34,5 @@ nav a{position:relative}nav a::after{content:'';position:absolute;left:0;right:0
 .fixed-cta a{font-size:16px;font-weight:700}
 @media(max-width:640px){.fixed-cta a{font-size:14px;padding:16px 12px;gap:8px}}
 @media(max-width:360px){.fixed-cta a{font-size:12px;padding-inline:10px}}
+
+a[href^="tel:"]{display:inline-block;text-decoration:underline;text-decoration-color:#aaa;text-underline-offset:5px;min-height:44px;padding-block:5px}
