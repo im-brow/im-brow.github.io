@@ -143,7 +143,7 @@ a[href^="tel:"]{display:inline-block;text-decoration:underline;text-decoration-c
 html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 @media(max-width:640px){
  .hero-copy{min-width:0;container-type:inline-size}
- .hero-copy>h1{font-size:16px;font-size:clamp(14px,9cqw,24px);max-width:100%;letter-spacing:-.065em;line-height:1.45}
+ .hero-copy .hero-title{font-size:16px;font-size:clamp(14px,9cqw,24px);max-width:100%;letter-spacing:-.065em;line-height:1.45}
  .hero-title-line{white-space:nowrap;max-width:100%;overflow:visible}
  .hero-copy>.intro{font-size:9px;-webkit-text-size-adjust:100%;text-size-adjust:100%}
  .fixed-cta{bottom:calc(12px + env(safe-area-inset-bottom,0px))}
