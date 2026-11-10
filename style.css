@@ -155,3 +155,5 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 .testimonial-note .review-image-note{display:inline-block;font-size:inherit;line-height:inherit;color:inherit;margin-top:5px}
 
 .hero-event-price,.booking-label{display:inline-block}.hero-copy .event{animation:none}
+
+.case-caption{justify-content:flex-end;padding:10px 0}.case-arrow{width:19px;height:19px;display:block;color:#111}
