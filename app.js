@@ -59,7 +59,7 @@ function reveal(el){
  let items=[];
  if(type==='hero'){
   items=[...el.children].filter(item=>item.tagName!=='H1');
-  el.querySelectorAll('.hero-title-line').forEach((line,i)=>anims.push(line.animate([{opacity:0,transform:`translateX(${(i===0?-1:1)*(reduced.matches?26:50)}px)`},{opacity:1,transform:'none'}],{duration:1100,delay:80+i*180,easing:'cubic-bezier(.16,.75,.2,1)',fill:'both'})));
+  el.querySelectorAll('.hero-title-line').forEach((line,i)=>anims.push(line.animate([{opacity:0,transform:`translateX(${(i===0?-1:1)*(innerWidth<=640?8:(reduced.matches?26:50))}px)`},{opacity:1,transform:'none'}],{duration:1100,delay:80+i*180,easing:'cubic-bezier(.16,.75,.2,1)',fill:'both'})));
  }
  if(type==='stagger')items=[...el.querySelectorAll(':scope > article,:scope > details,:scope > dl > div')];
  if(type==='review')items=[...el.querySelectorAll('blockquote')];
